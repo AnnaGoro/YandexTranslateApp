@@ -20,6 +20,6 @@ class TranslationResponseModel : Mappable {
     
     func mapping(map: Map) {
         def <- map["def"]
-        }
+    }
     
 }

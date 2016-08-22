@@ -9,12 +9,16 @@
 import UIKit
 
 class ViewController: UIViewController, UITextFieldDelegate  {
-    private let viewModelTranslater  = ViewModelTranslater()
+    
     @IBOutlet weak var actInd: UIActivityIndicatorView!
     @IBOutlet weak var translatedText: UILabel!
     @IBOutlet weak var inputTextToTranslate: UITextField!
+    private let viewModelTranslater  = ViewModelTranslater()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        testChange()
         
         actInd.hidesWhenStopped = true;
         actInd.activityIndicatorViewStyle  = UIActivityIndicatorViewStyle.Gray;
@@ -24,24 +28,25 @@ class ViewController: UIViewController, UITextFieldDelegate  {
         
         viewModelTranslater.callback = { [unowned self]  text, isAnimating  in
             
-             self.translatedText.text = text
-             switch isAnimating {
-             case true : self.actInd.startAnimating()
-             case false : self.actInd.stopAnimating()
+            self.translatedText.text = text
+            
+            switch isAnimating {
+            case true : self.actInd.startAnimating()
+            case false : self.actInd.stopAnimating()
                 
             }
         }
         testChange()
     }
-
+    
     func textFieldDidChange(textField: UITextField) {
         
-              testChange()
+        testChange()
     }
-
-    func testChange() {   
     
-       viewModelTranslater.changedText(inputTextToTranslate.text!)
+    private func testChange() {
+        
+        viewModelTranslater.changedText(inputTextToTranslate.text!)
         
     }
     

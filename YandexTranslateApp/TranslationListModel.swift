@@ -26,6 +26,6 @@ class TranslationListModel : Mappable {
         text <- map["text"]
         pos <- map["pos"]
         tr <- map["tr"]
-               
+        
     }
 }
