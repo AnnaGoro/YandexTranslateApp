@@ -16,7 +16,7 @@ class ViewModelTranslater {
     var callback: ( (String) -> Void)?
     var yandexServiceApi = YandexServiceApi()
     var translationModel = [TranslationModel]()
-    
+    var arrayText: [String]?
     func changedText (inputText : String) {
         
         yandexServiceApi.sendRequestText (inputText) { data in
@@ -27,13 +27,18 @@ class ViewModelTranslater {
                 //print (" get text to translate from \(value.text)")
                 for value in value.tr! {
                     print (" get text to translate from \(value.text)")
-                    self.translationModel.append(value)}
+                    self.translationModel.append(value)
+                    //self.arrayText.append(value.text!)
+                    self.translatedText = value.text!
+
+                }
                 
                  }
-           
+             //self.translatedText = arrayText[0].
+             self.notify()
         }
-         self.translatedText = (self.translationModel.first?.text)!
-         notify()
+         print(" translatedText \(translatedText)")
+        
 }
     
     func notify() {

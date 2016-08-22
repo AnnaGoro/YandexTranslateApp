@@ -17,6 +17,7 @@ class ViewController: UIViewController, UITextFieldDelegate  {
         super.viewDidLoad()
         inputTextToTranslate.addTarget(self, action: #selector(ViewController.textFieldDidChange(_:)), forControlEvents: UIControlEvents.EditingChanged)
         viewModelTranslater.callback = { [unowned self]  text in   //react3
+            print("callback viewController")
              self.translatedText.text = text
         }
         testChange()
@@ -28,7 +29,8 @@ class ViewController: UIViewController, UITextFieldDelegate  {
 
     func testChange() {   
     
-     viewModelTranslater.changedText(inputTextToTranslate.text!)
+       viewModelTranslater.changedText(inputTextToTranslate.text!)
+        
     }
     
 }
