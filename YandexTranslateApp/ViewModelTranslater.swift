@@ -22,15 +22,12 @@ class ViewModelTranslater {
          if inputText.characters.count > 2 {
         yandexServiceApi.sendRequestText (inputText) { data in
             self.isAnimating = true
-            //self.actInd!.startAnimating()
             let translationListModel = data.1
             for value in translationListModel {
-                //print (" get text to translate from \(value.text)")
                 for value in value.tr! {
                     print (" get text to translate from \(value.text)")
                     self.translationModel.append(value)
                     self.arrayText.append(value.text!)
-                    //self.translatedText = value.text!
                     self.translatedText = self.arrayText[0]
                     }
                 
