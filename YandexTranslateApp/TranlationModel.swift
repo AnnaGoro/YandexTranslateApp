@@ -12,7 +12,6 @@ import ObjectMapper
 
 class TranslationModel : Mappable {
 
-
     var text : String?
     var pos : String?
         

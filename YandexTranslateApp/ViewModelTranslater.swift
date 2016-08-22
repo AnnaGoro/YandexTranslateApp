@@ -20,7 +20,7 @@ class ViewModelTranslater {
     
     func changedText (inputText : String) {
          if inputText.characters.count > 2 {
-        yandexServiceApi.sendRequestText (inputText) { data in
+         yandexServiceApi.sendRequestText (inputText) { data in
             self.isAnimating = true
             let translationListModel = data.1
             for value in translationListModel {
