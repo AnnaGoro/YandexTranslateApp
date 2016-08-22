@@ -13,7 +13,7 @@ class ViewModelTranslater {
     
     var translatedText: String = ""
     var callback: ( (String, Bool) -> Void)?
-    private let yandexServiceApi = YandexServiceApi()
+    private var yandexServiceApi = YandexServiceApi()
     var isAnimating = false
     
     func changedText (inputText : String) {
@@ -27,13 +27,13 @@ class ViewModelTranslater {
             
         } else if inputText.characters.count > 2 {
             
-            yandexServiceApi.sendRequestText (inputText) { data in
+            yandexServiceApi.sendRequestText (inputText) { [weak self] data in
                 
                 let translationListModel = data.1
                 if let value = translationListModel.first {
-                    self.translatedText = (value.tr?.first?.text)!
-                    self.isAnimating = false
-                    self.notify()
+                    self!.translatedText = (value.tr?.first?.text)!
+                    self!.isAnimating = false
+                    self!.notify()
                 }
             }
             

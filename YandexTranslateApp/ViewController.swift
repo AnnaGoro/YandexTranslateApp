@@ -13,7 +13,7 @@ class ViewController: UIViewController, UITextFieldDelegate  {
     @IBOutlet weak var actInd: UIActivityIndicatorView!
     @IBOutlet weak var translatedText: UILabel!
     @IBOutlet weak var inputTextToTranslate: UITextField!
-    private let viewModelTranslater  = ViewModelTranslater()
+    private var viewModelTranslater  = ViewModelTranslater()
     
     override func viewDidLoad() {
         super.viewDidLoad()
