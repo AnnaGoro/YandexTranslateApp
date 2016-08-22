@@ -22,6 +22,7 @@ class ViewModelTranslater {
             
             self.isAnimating = false
             self.translatedText = ""
+            
             notify()
             
         } else if inputText.characters.count > 2 {
@@ -32,17 +33,15 @@ class ViewModelTranslater {
                 
                 let translationListModel = data.1
                 for value in translationListModel {
-                    for value in value.tr!{
-                        
-                        self.translatedText = value.text!
-                    }
+                    
+                    self.translatedText = (value.tr?.first?.text)!
+                    self.notify()
+                
                 }
                 self.isAnimating = false
                 self.notify()
             }
-        }
-            
-        else {
+        } else {
             
             self.isAnimating = false
             translatedText = "Oops,too short word, try again"

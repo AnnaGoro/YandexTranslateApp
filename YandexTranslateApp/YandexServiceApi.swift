@@ -22,34 +22,13 @@ class YandexServiceApi {
         
         var translationData = [TranslationListModel]()
         
-        Alamofire.request(.POST, "https://dictionary.yandex.net/api/v1/dicservice.json/lookup", parameters: parameters).responseObject{ (response: Response<TranslationResponseModel, NSError>) in
+        Alamofire.request(.POST, "https://dictionary.yandex.net/api/v1/dicservice.json/lookup", parameters: parameters)
+            .responseObject{ (response: Response<TranslationResponseModel, NSError>) in
             if let td = response.result.value?.def {
                 translationData = td
                 completionHandler(true, translationData)
-                //print(td[0])
             }
         }
     }
     
-    
-    
-    
-    
-    
-    
-    
 }
-
-/*
- { (response: Response<TranslationResponseModel, NSError>) in
- let translationResponseModel = response.result.value
- if let translationResponseModel = translationResponseModel {
- if let translationListModel = translationResponseModel.def {
- translationData = translationListModel
- completionHandler(true, translationData)
- 
- }
- }
- }
- 
- */

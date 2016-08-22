@@ -31,10 +31,12 @@ class ViewController: UIViewController, UITextFieldDelegate  {
             self.translatedText.text = text
             
             switch isAnimating {
-            case true : self.actInd.startAnimating()
-            case false : self.actInd.stopAnimating()
+                
+                case true : self.actInd.startAnimating()
+                case false : self.actInd.stopAnimating()
                 
             }
+         
         }
         testChange()
     }
