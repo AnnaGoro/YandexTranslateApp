@@ -14,14 +14,31 @@ class ViewModelTranslater {
 
     var translatedText: String = ""
     var callback: ( (String) -> Void)?
+    var yandexServiceApi = YandexServiceApi()
+    var translationModel = [TranslationModel]()
     
-    func changedText () {
+    func changedText (inputText : String) {
         
-        
-        
-        
+        yandexServiceApi.sendRequestText (inputText) { data in
+            
+            
+            let translationListModel = data.1
+            for value in translationListModel {
+                //print (" get text to translate from \(value.text)")
+                for value in value.tr! {
+                    print (" get text to translate from \(value.text)")
+                    self.translationModel.append(value)}
+                
+                 }
+           
+        }
+         self.translatedText = (self.translationModel.first?.text)!
+         notify()
+}
+    
+    func notify() {
+    
+        self.callback!(translatedText)
+    
     }
-
-
-
 }

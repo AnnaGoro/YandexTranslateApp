@@ -17,23 +17,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="translation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i4T-AH-tIc">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter word to tranlate" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dK9-T7-KI6">
+                                <rect key="frame" x="137" y="73" width="326" height="30"/>
+                                <accessibility key="accessibilityConfiguration" hint="enter word to tranlate"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="326" id="F9y-ig-Jhx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="JxE-pp-s3P">
+                                <rect key="frame" x="290" y="178" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="translation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i4T-AH-tIc">
                                 <rect key="frame" x="137" y="126" width="326" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter word to tranlate" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dK9-T7-KI6">
-                                <rect key="frame" x="137" y="73" width="326" height="30"/>
-                                <accessibility key="accessibilityConfiguration" hint="enter word to tranlate"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="JxE-pp-s3P">
-                                <rect key="frame" x="290" y="178" width="20" height="20"/>
-                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dK9-T7-KI6" firstAttribute="leading" secondItem="i4T-AH-tIc" secondAttribute="leading" id="0U7-gB-D1v"/>
+                            <constraint firstItem="i4T-AH-tIc" firstAttribute="top" secondItem="dK9-T7-KI6" secondAttribute="bottom" constant="23" id="2ad-1b-edI"/>
+                            <constraint firstItem="dK9-T7-KI6" firstAttribute="trailing" secondItem="i4T-AH-tIc" secondAttribute="trailing" id="BeL-la-2vh"/>
+                            <constraint firstItem="i4T-AH-tIc" firstAttribute="centerX" secondItem="JxE-pp-s3P" secondAttribute="centerX" id="hNP-X3-UtZ"/>
+                            <constraint firstItem="dK9-T7-KI6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="m0k-WK-pDV"/>
+                            <constraint firstItem="JxE-pp-s3P" firstAttribute="top" secondItem="i4T-AH-tIc" secondAttribute="bottom" constant="31" id="uD9-fK-hG7"/>
+                            <constraint firstItem="dK9-T7-KI6" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="53" id="zGo-iG-eCh"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="actInd" destination="JxE-pp-s3P" id="4PO-ya-hxm"/>

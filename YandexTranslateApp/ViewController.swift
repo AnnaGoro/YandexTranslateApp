@@ -15,18 +15,21 @@ class ViewController: UIViewController, UITextFieldDelegate  {
     @IBOutlet weak var inputTextToTranslate: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        inputTextToTranslate.addTarget(self, action: #selector(ViewController.textFieldDidChange(_:)), forControlEvents: UIControlEvents.EditingChanged)
+        viewModelTranslater.callback = { [unowned self]  text in   //react3
+             self.translatedText.text = text
+        }
+        testChange()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     func textFieldDidChange(textField: UITextField) {
-        viewModelTranslater.changedText()
+       testChange()
     }
 
+    func testChange() {   
     
+     viewModelTranslater.changedText(inputTextToTranslate.text!)
+    }
     
 }
 
