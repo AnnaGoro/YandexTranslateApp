@@ -7,14 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		96D10BC655EEF2D2198B7A14 /* Pods_YandexTranslateApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ACD1E3D79A3781507FB16EA /* Pods_YandexTranslateApp.framework */; };
 		C5ADA0E71D6AD92200AE2B42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5ADA0E61D6AD92200AE2B42 /* AppDelegate.swift */; };
 		C5ADA0E91D6AD92200AE2B42 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5ADA0E81D6AD92200AE2B42 /* ViewController.swift */; };
 		C5ADA0EC1D6AD92200AE2B42 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5ADA0EA1D6AD92200AE2B42 /* Main.storyboard */; };
 		C5ADA0EE1D6AD92200AE2B42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5ADA0ED1D6AD92200AE2B42 /* Assets.xcassets */; };
 		C5ADA0F11D6AD92200AE2B42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5ADA0EF1D6AD92200AE2B42 /* LaunchScreen.storyboard */; };
+		C5ADA0F91D6ADAD100AE2B42 /* ViewModelTranslater.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5ADA0F81D6ADAD100AE2B42 /* ViewModelTranslater.swift */; };
+		C5ADA0FB1D6ADAF100AE2B42 /* YandexServiceApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5ADA0FA1D6ADAF100AE2B42 /* YandexServiceApi.swift */; };
+		C5ADA0FD1D6AE4C400AE2B42 /* TranlationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5ADA0FC1D6AE4C400AE2B42 /* TranlationModel.swift */; };
+		C5ADA0FF1D6AEC3B00AE2B42 /* TranslationResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5ADA0FE1D6AEC3B00AE2B42 /* TranslationResponseModel.swift */; };
+		C5ADA1011D6AEE1100AE2B42 /* TranslationListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5ADA1001D6AEE1100AE2B42 /* TranslationListModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		41FCF7D52320E375D1454505 /* Pods-YandexTranslateApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YandexTranslateApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YandexTranslateApp/Pods-YandexTranslateApp.debug.xcconfig"; sourceTree = "<group>"; };
+		8ACD1E3D79A3781507FB16EA /* Pods_YandexTranslateApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YandexTranslateApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A277C8562C27D57582508E78 /* Pods-YandexTranslateApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YandexTranslateApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-YandexTranslateApp/Pods-YandexTranslateApp.release.xcconfig"; sourceTree = "<group>"; };
 		C5ADA0E31D6AD92200AE2B42 /* YandexTranslateApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YandexTranslateApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5ADA0E61D6AD92200AE2B42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C5ADA0E81D6AD92200AE2B42 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +31,11 @@
 		C5ADA0ED1D6AD92200AE2B42 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C5ADA0F01D6AD92200AE2B42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C5ADA0F21D6AD92200AE2B42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C5ADA0F81D6ADAD100AE2B42 /* ViewModelTranslater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelTranslater.swift; sourceTree = "<group>"; };
+		C5ADA0FA1D6ADAF100AE2B42 /* YandexServiceApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YandexServiceApi.swift; sourceTree = "<group>"; };
+		C5ADA0FC1D6AE4C400AE2B42 /* TranlationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TranlationModel.swift; sourceTree = "<group>"; };
+		C5ADA0FE1D6AEC3B00AE2B42 /* TranslationResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TranslationResponseModel.swift; sourceTree = "<group>"; };
+		C5ADA1001D6AEE1100AE2B42 /* TranslationListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TranslationListModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +43,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96D10BC655EEF2D2198B7A14 /* Pods_YandexTranslateApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		096431922CF35271CFB652FD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8ACD1E3D79A3781507FB16EA /* Pods_YandexTranslateApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1BB884FD40525259F4CBCE5D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				41FCF7D52320E375D1454505 /* Pods-YandexTranslateApp.debug.xcconfig */,
+				A277C8562C27D57582508E78 /* Pods-YandexTranslateApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		C5ADA0DA1D6AD92200AE2B42 = {
 			isa = PBXGroup;
 			children = (
 				C5ADA0E51D6AD92200AE2B42 /* YandexTranslateApp */,
 				C5ADA0E41D6AD92200AE2B42 /* Products */,
+				1BB884FD40525259F4CBCE5D /* Pods */,
+				096431922CF35271CFB652FD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -60,6 +94,11 @@
 				C5ADA0ED1D6AD92200AE2B42 /* Assets.xcassets */,
 				C5ADA0EF1D6AD92200AE2B42 /* LaunchScreen.storyboard */,
 				C5ADA0F21D6AD92200AE2B42 /* Info.plist */,
+				C5ADA0F81D6ADAD100AE2B42 /* ViewModelTranslater.swift */,
+				C5ADA0FA1D6ADAF100AE2B42 /* YandexServiceApi.swift */,
+				C5ADA0FC1D6AE4C400AE2B42 /* TranlationModel.swift */,
+				C5ADA0FE1D6AEC3B00AE2B42 /* TranslationResponseModel.swift */,
+				C5ADA1001D6AEE1100AE2B42 /* TranslationListModel.swift */,
 			);
 			path = YandexTranslateApp;
 			sourceTree = "<group>";
@@ -71,9 +110,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C5ADA0F51D6AD92200AE2B42 /* Build configuration list for PBXNativeTarget "YandexTranslateApp" */;
 			buildPhases = (
+				EA3BDA6114C21DAE1B29E7BA /* [CP] Check Pods Manifest.lock */,
 				C5ADA0DF1D6AD92200AE2B42 /* Sources */,
 				C5ADA0E01D6AD92200AE2B42 /* Frameworks */,
 				C5ADA0E11D6AD92200AE2B42 /* Resources */,
+				675DD06ECC480CC5355F37E9 /* [CP] Embed Pods Frameworks */,
+				0C2DBE45AF9A8EEB234B69CA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,13 +172,66 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0C2DBE45AF9A8EEB234B69CA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YandexTranslateApp/Pods-YandexTranslateApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		675DD06ECC480CC5355F37E9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YandexTranslateApp/Pods-YandexTranslateApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EA3BDA6114C21DAE1B29E7BA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C5ADA0DF1D6AD92200AE2B42 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				C5ADA0E91D6AD92200AE2B42 /* ViewController.swift in Sources */,
+				C5ADA0FB1D6ADAF100AE2B42 /* YandexServiceApi.swift in Sources */,
+				C5ADA1011D6AEE1100AE2B42 /* TranslationListModel.swift in Sources */,
 				C5ADA0E71D6AD92200AE2B42 /* AppDelegate.swift in Sources */,
+				C5ADA0F91D6ADAD100AE2B42 /* ViewModelTranslater.swift in Sources */,
+				C5ADA0FF1D6AEC3B00AE2B42 /* TranslationResponseModel.swift in Sources */,
+				C5ADA0FD1D6AE4C400AE2B42 /* TranlationModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +344,7 @@
 		};
 		C5ADA0F61D6AD92200AE2B42 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41FCF7D52320E375D1454505 /* Pods-YandexTranslateApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = YandexTranslateApp/Info.plist;
@@ -260,6 +356,7 @@
 		};
 		C5ADA0F71D6AD92200AE2B42 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A277C8562C27D57582508E78 /* Pods-YandexTranslateApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = YandexTranslateApp/Info.plist;
@@ -288,6 +385,7 @@
 				C5ADA0F71D6AD92200AE2B42 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

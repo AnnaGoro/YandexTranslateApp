@@ -8,8 +8,11 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController, UITextFieldDelegate  {
+    private let viewModelTranslater  = ViewModelTranslater()
+    @IBOutlet weak var actInd: UIActivityIndicatorView!
+    @IBOutlet weak var translatedText: UILabel!
+    @IBOutlet weak var inputTextToTranslate: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -19,7 +22,11 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    func textFieldDidChange(textField: UITextField) {
+        viewModelTranslater.changedText()
+    }
 
-
+    
+    
 }
 
