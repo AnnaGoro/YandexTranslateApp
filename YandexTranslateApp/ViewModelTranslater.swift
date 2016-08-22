@@ -17,11 +17,12 @@ class ViewModelTranslater {
     var isAnimating = false
     
     func changedText (inputText : String) {
-        
+        isAnimating = true
+       
         if inputText.characters.count == 0 {
             
-            self.isAnimating = false
-            self.translatedText = ""
+            isAnimating = false
+            translatedText = ""
             
             notify()
             
@@ -29,18 +30,18 @@ class ViewModelTranslater {
             
             yandexServiceApi.sendRequestText (inputText) { data in
                 
-                self.isAnimating = true
-                
                 let translationListModel = data.1
                 for value in translationListModel {
                     
                     self.translatedText = (value.tr?.first?.text)!
+                    self.isAnimating = false
                     self.notify()
                 
                 }
-                self.isAnimating = false
-                self.notify()
+                
             }
+            
+            notify()
             
         } else {
             
@@ -48,6 +49,7 @@ class ViewModelTranslater {
             translatedText = "Oops,too short word, try again"
             notify()
         }
+            notify()
     }
     
     private func notify() {
