@@ -28,8 +28,4 @@ class TranslationListModel : Mappable {
         tr <- map["tr"]
                
     }
-    
-    
-    
-    
 }

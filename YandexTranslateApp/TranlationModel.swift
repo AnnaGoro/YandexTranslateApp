@@ -25,10 +25,5 @@ class TranslationModel : Mappable {
         text <- map["text"]
         pos <- map["pos"]
         
-        
     }
-
-
-
-
 }
