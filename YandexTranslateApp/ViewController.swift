@@ -18,8 +18,6 @@ class ViewController: UIViewController, UITextFieldDelegate  {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        testChange()
-        
         actInd.hidesWhenStopped = true;
         actInd.activityIndicatorViewStyle  = UIActivityIndicatorViewStyle.Gray;
         actInd.center = view.center
