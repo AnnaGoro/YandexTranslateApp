@@ -27,6 +27,7 @@ class ViewModelTranslater {
         } else if inputText.characters.count > 2 {
             
             yandexServiceApi.sendRequestText (inputText) { data in
+                
                 self.isAnimating = true
                 
                 let translationListModel = data.1
@@ -34,7 +35,6 @@ class ViewModelTranslater {
                     for value in value.tr!{
                         
                         self.translatedText = value.text!
-                        print(self.translatedText)
                     }
                 }
                 self.isAnimating = false
