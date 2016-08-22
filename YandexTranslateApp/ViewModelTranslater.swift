@@ -41,6 +41,7 @@ class ViewModelTranslater {
                 self.isAnimating = false
                 self.notify()
             }
+            
         } else {
             
             self.isAnimating = false
