@@ -16,67 +16,63 @@ class ViewModelTranslater {
     private var yandexServiceApi = YandexServiceApi()
     var isAnimating = false
     
-    var previous = ""
-    var next = ""
+    private var previous = ""
     
     func changedText (inputText : String) {
         
+        self.previous = inputText
         isAnimating = true
-       
+        
         if inputText.characters.count == 0 {
             
-            isAnimating = false
-            translatedText = ""
+            self.isAnimating = false
+            self.translatedText = ""
             
+        }
+      
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (Int64)(2/5 * NSEC_PER_SEC)), dispatch_get_main_queue(), {
             
-        } else if inputText.characters.count > 2 {
+            if inputText.characters.count > 2 {
             
-            var temp = next
-            previous = temp
-            next = inputText
-            
-            print("***previous**\(previous)")
-            print("***next**\(next)")
-            print("---------------------")
-            
-            if previous == next {
-                
-                yandexServiceApi.sendRequestText (inputText) { [weak self] data in
-                
-                if data.0 == false {
-                
-                    self!.isAnimating = false
-                    self!.translatedText = "Error, check your network connection"
-                    return
-               
-                } else {
+                if self.previous == inputText {
                     
-                    let translationListModel = data.1
+                    self.yandexServiceApi.sendRequestText (inputText) { [weak self] data in
                         
-                    if  let value = translationListModel.first {
-                        self!.translatedText = (value.tr?.first?.text)!
-                        self!.isAnimating = false
-                    
+                        if data.0 == false {
+                            
+                            self!.isAnimating = false
+                            self!.translatedText = "Error, check your network connection"
+                            return
+                            
+                        } else {
+                            
+                            let translationListModel = data.1
+                            
+                            if  let value = translationListModel.first {
+                                self!.translatedText = (value.tr?.first?.text)!
+                                self!.isAnimating = false
+                                
+                            }
+                        }
+                        
+                        self!.notify()
+                        
                     }
                 }
-                
-                self!.notify()
-                
-                }
-            }
+  
+            } else {
             
-        } else {
-            
-            translatedText = "Error, smth wrong"
-            isAnimating = false
+            self.translatedText = "Error, smth wrong"
+            self.isAnimating = false
             return
          
-        }
+             }
+            
+        });
         
         notify()
     }
     
-
     
     private func notify() {
         

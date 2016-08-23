@@ -198,54 +198,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "YandexTranslateApp/ViewModelTranslater.swift"
-            timestampString = "493638266.247131"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
-            landmarkName = "changedText(_:)"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "YandexTranslateApp.ViewModelTranslater.(changedText (Swift.String) -&gt; ()).(closure #1)"
-                  moduleName = "YandexTranslateApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/annagorobchenko/Documents/YandexTranslateApp/YandexTranslateApp/ViewModelTranslater.swift"
-                  timestampString = "493573315.418131"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "34"
-                  endingLineNumber = "34"
-                  offsetFromSymbolStart = "602">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "YandexTranslateApp.ViewModelTranslater.(changedText (Swift.String) -&gt; ()).(closure #1)"
-                  moduleName = "YandexTranslateApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/annagorobchenko/Documents/YandexTranslateApp/YandexTranslateApp/ViewModelTranslater.swift"
-                  timestampString = "493573315.418348"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "34"
-                  endingLineNumber = "34"
-                  offsetFromSymbolStart = "2064">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "YandexTranslateApp/YandexServiceApi.swift"
             timestampString = "493635237.67858"
             startingColumnNumber = "9223372036854775807"

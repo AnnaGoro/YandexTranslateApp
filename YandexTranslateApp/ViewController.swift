@@ -42,11 +42,6 @@ class ViewController: UIViewController, UITextFieldDelegate  {
     func textFieldDidChange(textField: UITextField) {
         
         testChange()
-        
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (Int64)(2/5 * NSEC_PER_SEC)), dispatch_get_main_queue(), {
-            self.testChange()
-        });
-        
 
     }
     
