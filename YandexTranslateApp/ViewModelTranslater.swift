@@ -33,35 +33,40 @@ class ViewModelTranslater {
             
             var temp = next
             previous = temp
-            print("***previous**\(previous)")
             next = inputText
+            
+            print("***previous**\(previous)")
             print("***next**\(next)")
             print("---------------------")
             
             if previous == next {
-             yandexServiceApi.sendRequestText (inputText) { [weak self] data in
                 
-             if data.0 == false {
+                yandexServiceApi.sendRequestText (inputText) { [weak self] data in
                 
-                self!.isAnimating = false
-                self!.translatedText = "Error, check your network connection"
-                return
-               
-             } else {
-                    
-                let translationListModel = data.1
-                        
-                if let value = translationListModel.first {
-                    self!.translatedText = (value.tr?.first?.text)!
+                if data.0 == false {
+                
                     self!.isAnimating = false
+                    self!.translatedText = "Error, check your network connection"
+                    return
+               
+                } else {
                     
+                    let translationListModel = data.1
+                        
+                    if  let value = translationListModel.first {
+                        self!.translatedText = (value.tr?.first?.text)!
+                        self!.isAnimating = false
+                    
+                    }
                 }
-               }
+                
                 self!.notify()
-             }
+                
+                }
             }
+            
         } else {
-            print("else translatedText = Error, smth wrong")
+            
             translatedText = "Error, smth wrong"
             isAnimating = false
             return
