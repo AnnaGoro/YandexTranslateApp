@@ -41,7 +41,7 @@ class YandexServiceApi {
     func cancelRequest () {
         
         self.request?.cancel()
-       
+     //  alamoFireManager.
         //Alamofire.Manager.sharedInstance.session.invalidateAndCancel()
     }
     

@@ -20,26 +20,18 @@ class ViewModelTranslater {
     
     func changedText (inputText : String) {
         
-        
         let current = inputText
-        
         isAnimating = true
         
-        if inputText.characters.count == 0 {
-            
-            self.isAnimating = false
-            self.translatedText = ""
-            
-        }
-      
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (Int64)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), {
             
-            if self.previous == inputText {
+            
+            if inputText.characters.count > 2 {
                 
-                if inputText.characters.count > 2 {
+                if self.previous == inputText {
                     
                     self.yandexServiceApi.sendRequestText (inputText) { [weak self] data in
-                       
+                        /*
                         if data.0 == false {
                             
                             self!.isAnimating = false
@@ -47,30 +39,40 @@ class ViewModelTranslater {
                             return
                             
                         } else {
-                            
+                            */
                             let translationListModel = data.1
                             
                             if  let value = translationListModel.first {
+                                
                                 self!.translatedText = (value.tr?.first?.text)!
                                 self!.isAnimating = false
                                 
                             }
-                        }
+                       // }
                         
                         self!.notify()
-                        
                     }
+                    
+                } else {
+                    
+                    self.translatedText = "Error, smth wrong"
+                    self.isAnimating = false
+                    
                 }
                 
+            } else if inputText.characters.count == 0 {
+                
+                self.isAnimating = false
+                self.translatedText = ""
                 
             } else {
+                
+                self.translatedText = "Error, too short word"
+                self.isAnimating = false
+                
+            }
             
-            self.translatedText = "Error, smth wrong"
-            self.isAnimating = false
-            return
-         
-             }
-            
+            self.notify()
         });
         
         let temp = current

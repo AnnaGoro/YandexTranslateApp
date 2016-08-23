@@ -247,11 +247,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTranslateApp/ViewModelTranslater.swift"
-            timestampString = "493642905.782188"
+            timestampString = "493648608.762646"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
             landmarkName = "changedText(_:)"
             landmarkType = "5">
          </BreakpointContent>
