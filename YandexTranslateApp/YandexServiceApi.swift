@@ -12,7 +12,7 @@ import AlamofireObjectMapper
 
 class YandexServiceApi {
     
-    private var tempRequest = [Request]()
+    private var tempRequests = [Request]()
     
     func sendRequestText (text : String, completionHandler: (Bool, [TranslationListModel]) -> ()) {
     
@@ -23,7 +23,7 @@ class YandexServiceApi {
         
         var translationData = [TranslationListModel]()
         
-        if  !tempRequest.isEmpty {
+        if  !tempRequests.isEmpty {
             cancelRequest ()
         
         }
@@ -38,12 +38,15 @@ class YandexServiceApi {
                 
                 }
         }
-        tempRequest.append(request)
+        tempRequests.append(request)
     }
     
     func cancelRequest () {
         
-       tempRequest.removeAll()
+        for request in tempRequests {
+            
+            request.cancel()
+        }
         
     }
     
