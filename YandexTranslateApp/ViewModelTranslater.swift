@@ -27,15 +27,24 @@ class ViewModelTranslater {
             
         } else if inputText.characters.count > 2 {
             
-            yandexServiceApi.sendRequestText (inputText) { [weak self] data in
+             yandexServiceApi.sendRequestText (inputText) { [weak self] data in
                 
+             if data.0 == false {
+                    
+                self!.isAnimating = false
+                self!.translatedText = "Error, check your network connection"
+                    
+             } else {
+                    
                 let translationListModel = data.1
+                        
                 if let value = translationListModel.first {
                     self!.translatedText = (value.tr?.first?.text)!
-                    self!.isAnimating = false
-                    self!.notify()
+                     self!.isAnimating = false
+                     self!.notify()
                 }
-            }
+               }
+             }
             
         } else {
             

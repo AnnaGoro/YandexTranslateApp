@@ -27,7 +27,10 @@ class YandexServiceApi {
             if let td = response.result.value?.def {
                 translationData = td
                 completionHandler(true, translationData)
-            }
+            } else {
+                completionHandler(false, translationData)
+                
+                }
         }
     }
     
