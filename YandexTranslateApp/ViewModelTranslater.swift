@@ -32,6 +32,7 @@ class ViewModelTranslater {
                     
                     self.yandexServiceApi.sendRequestText (inputText) { [weak self] data in
                         /*
+                         
                         if data.0 == false {
                             
                             self!.isAnimating = false
@@ -39,6 +40,7 @@ class ViewModelTranslater {
                             return
                             
                         } else {
+                         
                             */
                             let translationListModel = data.1
                             
