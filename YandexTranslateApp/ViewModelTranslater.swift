@@ -31,17 +31,7 @@ class ViewModelTranslater {
                 if self.previous == inputText {
                     
                     self.yandexServiceApi.sendRequestText (inputText) { [weak self] data in
-                        /*
-                         
-                        if data.0 == false {
-                            
-                            self!.isAnimating = false
-                            self!.translatedText = "Error, check your network connection"
-                            return
-                            
-                        } else {
-                         
-                            */
+                        
                             let translationListModel = data.1
                             
                             if  let value = translationListModel.first {
@@ -50,7 +40,6 @@ class ViewModelTranslater {
                                 self!.isAnimating = false
                                 
                             }
-                       // }
                         
                         self!.notify()
                     }
