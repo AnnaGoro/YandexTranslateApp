@@ -11,8 +11,6 @@ import Alamofire
 import AlamofireObjectMapper
 
 class YandexServiceApi {
-
-    private var alamoFireManager : Alamofire.Manager!
     
     private var tempRequest = [Request]()
     
@@ -41,7 +39,6 @@ class YandexServiceApi {
                 }
         }
         tempRequest.append(request)
-        print(request)
     }
     
     func cancelRequest () {
