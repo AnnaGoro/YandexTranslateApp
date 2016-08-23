@@ -30,7 +30,7 @@ class YandexServiceApi {
         
         }
         
-       let request = Alamofire.request(.POST, "https://dictionary.yandex.net/api/v1/dicservice.json/lookup", parameters: parameters)
+        let request = Alamofire.request(.POST, "https://dictionary.yandex.net/api/v1/dicservice.json/lookup", parameters: parameters)
             .responseObject{ (response: Response<TranslationResponseModel, NSError>) in
             if let td = response.result.value?.def {
                 translationData = td
