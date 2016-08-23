@@ -16,6 +16,9 @@ class ViewModelTranslater {
     private var yandexServiceApi = YandexServiceApi()
     var isAnimating = false
     
+    var previous = ""
+    var next = ""
+    
     func changedText (inputText : String) {
         
         isAnimating = true
@@ -25,35 +28,50 @@ class ViewModelTranslater {
             isAnimating = false
             translatedText = ""
             
+            
         } else if inputText.characters.count > 2 {
             
+            var temp = next
+            previous = temp
+            print("***previous**\(previous)")
+            next = inputText
+            print("***next**\(next)")
+            print("---------------------")
+            
+            if previous == next {
              yandexServiceApi.sendRequestText (inputText) { [weak self] data in
                 
              if data.0 == false {
-                    
+                
                 self!.isAnimating = false
                 self!.translatedText = "Error, check your network connection"
-                    
+                return
+               
              } else {
                     
                 let translationListModel = data.1
                         
                 if let value = translationListModel.first {
                     self!.translatedText = (value.tr?.first?.text)!
-                     self!.isAnimating = false
-                     self!.notify()
+                    self!.isAnimating = false
+                    
                 }
                }
+                self!.notify()
              }
-            
+            }
         } else {
-            
-            self.isAnimating = false
-            translatedText = "Oops,too short word, try again"
+            print("else translatedText = Error, smth wrong")
+            translatedText = "Error, smth wrong"
+            isAnimating = false
+            return
          
         }
-            notify()
+        
+        notify()
     }
+    
+
     
     private func notify() {
         
@@ -61,3 +79,4 @@ class ViewModelTranslater {
         
     }
 }
+

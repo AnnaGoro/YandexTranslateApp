@@ -12,6 +12,8 @@ import AlamofireObjectMapper
 
 class YandexServiceApi {
     
+    var request: Alamofire.Request?
+    private var alamoFireManager : Alamofire.Manager!
     
     func sendRequestText (text : String, completionHandler: (Bool, [TranslationListModel]) -> ()) {
         
@@ -22,7 +24,9 @@ class YandexServiceApi {
         
         var translationData = [TranslationListModel]()
         
-        Alamofire.request(.POST, "https://dictionary.yandex.net/api/v1/dicservice.json/lookup", parameters: parameters)
+      
+        
+        self.request = Alamofire.request(.POST, "https://dictionary.yandex.net/api/v1/dicservice.json/lookup", parameters: parameters)
             .responseObject{ (response: Response<TranslationResponseModel, NSError>) in
             if let td = response.result.value?.def {
                 translationData = td
@@ -32,6 +36,13 @@ class YandexServiceApi {
                 
                 }
         }
+    }
+    
+    func cancelRequest () {
+        
+        self.request?.cancel()
+       
+        //Alamofire.Manager.sharedInstance.session.invalidateAndCancel()
     }
     
 }
