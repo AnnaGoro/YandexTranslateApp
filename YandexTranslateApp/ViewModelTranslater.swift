@@ -15,12 +15,18 @@ class ViewModelTranslater {
     var callback: ( (String, Bool) -> Void)?
     private var yandexServiceApi = YandexServiceApi()
     var isAnimating = false
-    
+   
     private var previous = ""
     
     func changedText (inputText : String) {
         
-        self.previous = inputText
+        
+        let next = inputText
+        
+        print("previous \(previous)")
+        print("next \(next)")
+        print("**************")
+        
         isAnimating = true
         
         if inputText.characters.count == 0 {
@@ -32,12 +38,14 @@ class ViewModelTranslater {
       
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (Int64)(2/5 * NSEC_PER_SEC)), dispatch_get_main_queue(), {
             
-            if inputText.characters.count > 2 {
+            if self.previous == inputText {
+                
+                print(" dispatch_after \(self.previous) == \(inputText)")
             
-                if self.previous == inputText {
+                if inputText.characters.count > 2 {
                     
                     self.yandexServiceApi.sendRequestText (inputText) { [weak self] data in
-                        
+                        print("request called")
                         if data.0 == false {
                             
                             self!.isAnimating = false
@@ -59,7 +67,8 @@ class ViewModelTranslater {
                         
                     }
                 }
-  
+                
+                
             } else {
             
             self.translatedText = "Error, smth wrong"
@@ -69,6 +78,9 @@ class ViewModelTranslater {
              }
             
         });
+        
+        let temp = inputText
+        self.previous = temp
         
         notify()
     }
