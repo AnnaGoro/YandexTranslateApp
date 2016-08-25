@@ -10,5 +10,6 @@ pod 'AlamofireObjectMapper', '~> 3.0'
 pod 'AlamofireJsonToObjects'
 pod 'RxSwift',    '2.6'
 pod 'RxCocoa'
+pod 'RxAlamofire'
 
 end

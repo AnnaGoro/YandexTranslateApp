@@ -12,6 +12,8 @@ import AlamofireObjectMapper
 
 class YandexServiceApi {
     
+    // TODO     shareReplayLatestWhileConnected https://habrahabr.ru/post/283128/
+    
     private var tempRequests = [Request]()
     
     func sendRequestText (text : String, completionHandler: (Bool, [TranslationListModel]) -> ()) {

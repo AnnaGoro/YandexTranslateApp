@@ -1,94 +1,66 @@
-//
-//  ViewModelTranslater.swift
-//  YandexTranslateApp
-//
-//  Created by Anna Gorobchenko on 22.08.16.
-//  Copyright © 2016 Anna Gorobchenko. All rights reserved.
-//
+
 
 import Foundation
 import UIKit
+import RxSwift
 
 class ViewModelTranslater {
     
-    var translatedText: String = ""
-    var callback: ( (String, Bool) -> Void)?
+    var translatedText: Variable <String> = Variable( "" )
+    
     private var yandexServiceApi = YandexServiceApi()
-    var isAnimating = false
-    var a = 1
+    var isAnimating : Variable <Bool> = Variable( false )
+    
+    // var textChangedObservable: Observable<String>?
+    
     private var previous = ""
     
-    func changedText (inputText : String) {
-        
-        let current = inputText
-        isAnimating = true
-        
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (Int64)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), {
-            
-            
-            if inputText.characters.count == 0 {
-                
-                self.isAnimating = false
-                self.translatedText = ""
-                self.notify()
-                return
-                
-            }
-            
-            guard inputText.characters.count > 2 else {
-                
-                self.translatedText = "Error, too short word"
-                self.isAnimating = false
-                self.notify()
-                return
-                
-            }
-            
-            guard self.previous == inputText else {
-                
-                self.translatedText = "Error, smth wrong"
-                self.isAnimating = false
-                self.notify()
-                return
-                
-            }
-            
-            
-            self.yandexServiceApi.sendRequestText (inputText) { [weak self] data in
-                print("send request \(inputText)")
-                let translationListModel = data.1
-                
-                if  let value = translationListModel.first {
-                    
-                    self!.translatedText = (value.tr?.first?.text)!
-                    self!.isAnimating = false
-                    
-                } else {
-                    print("yandexServiceApi Server error, check request")
-                    self!.translatedText = "Server error, check request"
-                    self!.isAnimating = false
-                    
-                }
-                
-                
-                self!.notify()
-                
-            }
-            
-        });
-        
-        let temp = current
-        self.previous = temp
-        
-        notify()
-        
-    }
     
-    
-    private func notify() {
+    func changedText(text : String) {
         
-        self.callback?(translatedText, isAnimating)
+        self.isAnimating.value =  true
         
+        self.yandexServiceApi.sendRequestText(text){
+            [weak self] data in
+            let translationListModel = data.1
+            
+            if  let value = translationListModel.first {
+                
+                self!.translatedText.value = (value.tr?.first?.text)!
+                
+                
+                self?.isAnimating.value =  false
+                
+            }
+            
+            
+            /*self!.textChangedObservable!
+             
+             .filter { (textToTranslate : String) -> Bool in
+             textToTranslate.characters.count == 0
+             self!.isAnimating.value = false
+             self!.translatedText.value = ""
+             return true
+             }
+             /*
+             .filter { (textToTranslate : String) -> Bool in
+             self!.previous != textToTranslate
+             self!.isAnimating.value = false
+             self!.translatedText.value =  "Error, smth wrong"
+             return true
+             }
+             */
+             
+             .subscribeNext { (textToTranslate) in
+             self!.translatedText.value = text
+             
+             
+             }
+             
+             }
+             
+             */
+            
+        }
     }
 }
-

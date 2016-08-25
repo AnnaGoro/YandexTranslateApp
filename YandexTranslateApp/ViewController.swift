@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class ViewController: UIViewController, UITextFieldDelegate  {
     
@@ -15,6 +17,9 @@ class ViewController: UIViewController, UITextFieldDelegate  {
     @IBOutlet weak var inputTextToTranslate: UITextField!
     private var viewModelTranslater  = ViewModelTranslater()
     
+    private let bag = DisposeBag()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,34 +27,31 @@ class ViewController: UIViewController, UITextFieldDelegate  {
         actInd.activityIndicatorViewStyle  = UIActivityIndicatorViewStyle.Gray;
         actInd.center = view.center
         
-        inputTextToTranslate.addTarget(self, action: #selector(ViewController.textFieldDidChange(_:)), forControlEvents: UIControlEvents.EditingChanged)
-        
-        viewModelTranslater.callback = { [unowned self]  text, isAnimating  in
-            
-            self.translatedText.text = text
-            
-            switch isAnimating {
-                
-                case true : self.actInd.startAnimating()
-                case false : self.actInd.stopAnimating()
-                
+        inputTextToTranslate.rx_text.subscribeNext { (textToTranslate : String) -> Void in
+            self.viewModelTranslater.changedText(textToTranslate)
             }
-         
-        }
-        testChange()
-    }
-    
-    func textFieldDidChange(textField: UITextField) {
+            .addDisposableTo(bag)
         
-        testChange()
-
-    }
-    
-    private func testChange() {
         
-        viewModelTranslater.changedText(inputTextToTranslate.text!)
+        viewModelTranslater.translatedText.asObservable()
+            .subscribeNext { (translatedText: String) -> Void in
+                self.translatedText.text = translatedText
+            }
+            .addDisposableTo(bag)
+        
+        viewModelTranslater.isAnimating.asObservable()
+            .subscribeNext { (isAnimating: Bool) -> Void in
+                if isAnimating {
+                    self.actInd.startAnimating()
+                    
+                } else {
+                    
+                    self.actInd.startAnimating()
+                }
+            }
+            .addDisposableTo(bag)
+        
+        
         
     }
-    
 }
-
