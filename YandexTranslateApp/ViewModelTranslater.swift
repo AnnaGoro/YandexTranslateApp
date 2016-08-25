@@ -13,8 +13,7 @@ class ViewModelTranslater {
     
     // var textChangedObservable: Observable<String>?
     
-    private var previous = ""
-    
+    private var previous = ""    
     
     func changedText(text : String) {
         
@@ -22,15 +21,22 @@ class ViewModelTranslater {
         
         self.yandexServiceApi.sendRequestText(text){
             [weak self] data in
+            
             let translationListModel = data.1
             
             if  let value = translationListModel.first {
                 
                 self!.translatedText.value = (value.tr?.first?.text)!
-                
-                
                 self?.isAnimating.value =  false
                 
+            }
+            
+            if  data.0 == false {
+            
+                self!.translatedText.value = "Error, smth wrong"
+                self?.isAnimating.value =  false
+            
+            
             }
             
             

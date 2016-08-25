@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTranslateApp/ViewModelTranslater.swift"
-            timestampString = "493821503.113473"
+            timestampString = "493824076.357768"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "14"
-            endingLineNumber = "14"
+            startingLineNumber = "8"
+            endingLineNumber = "8"
             landmarkName = "ViewModelTranslater"
             landmarkType = "3">
             <Locations>
@@ -151,11 +151,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTranslateApp/ViewModelTranslater.swift"
-            timestampString = "493822174.659342"
+            timestampString = "493824076.357768"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
             landmarkName = "ViewModelTranslater"
             landmarkType = "3">
             <Locations>
@@ -247,11 +247,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTranslateApp/ViewModelTranslater.swift"
-            timestampString = "493823131.081208"
+            timestampString = "493824146.806799"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
             landmarkName = "changedText(_:)"
             landmarkType = "5">
          </BreakpointContent>
