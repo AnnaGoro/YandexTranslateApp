@@ -4,40 +4,49 @@ import Foundation
 import UIKit
 import RxSwift
 
-class ViewModelTranslater {
+struct ViewModelTranslater {
     
     var translatedText: Variable <String> = Variable( "" )
     
     private var yandexServiceApi = YandexServiceApi()
     var isAnimating : Variable <Bool> = Variable( false )
     
-    // var textChangedObservable: Observable<String>?
+    //var textChangedObservable: Observable<String?>
     
     private var previous = ""    
     
     func changedText(text : String) {
         
+        self.yandexServiceApi.sendRequestToTranslate(text)
+            .subscribeNext { translatedText in
+                print(translatedText)
+            }
+        
+        
+        
         self.isAnimating.value =  true
         
         self.yandexServiceApi.sendRequestText(text){
-            [weak self] data in
+             data in
             
             let translationListModel = data.1
             
             if  let value = translationListModel.first {
                 
-                self!.translatedText.value = (value.tr?.first?.text)!
-                self?.isAnimating.value =  false
+                self.translatedText.value = (value.tr?.first?.text)!
+                self.isAnimating.value =  false
                 
             }
             
             if  data.0 == false {
             
-                self!.translatedText.value = "Error, smth wrong"
-                self?.isAnimating.value =  false
+                self.translatedText.value = "Error, smth wrong"
+                self.isAnimating.value =  false
             
             
             }
+            
+            
             
             
             /*self!.textChangedObservable!
