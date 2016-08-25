@@ -8,11 +8,16 @@ PODS:
     - ObjectMapper (~> 1.0)
   - EVReflection (2.45.0)
   - ObjectMapper (1.4.0)
+  - RxCocoa (2.6.0):
+    - RxSwift (~> 2.5)
+  - RxSwift (2.6.0)
 
 DEPENDENCIES:
   - Alamofire (~> 3.4)
   - AlamofireJsonToObjects
   - AlamofireObjectMapper (~> 3.0)
+  - RxCocoa
+  - RxSwift (= 2.6)
 
 SPEC CHECKSUMS:
   Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
@@ -20,7 +25,9 @@ SPEC CHECKSUMS:
   AlamofireObjectMapper: 70f97cbf45c01c48d26aa07a1a7059a60ed7411d
   EVReflection: aa7065b5757b4efd7265cdb17074aeef57c3f981
   ObjectMapper: a07ad0462c5adf014adc0f89ef04c29b626e855e
+  RxCocoa: 89ab00d5753502520227940e3a0e0a0413683c6b
+  RxSwift: 77f3a0b15324baa7a1c9bfa9f199648a82424e26
 
-PODFILE CHECKSUM: 4f4e83697a20b11e566fe0a13baed46ec7ca8d83
+PODFILE CHECKSUM: 5adbcab09dfb2a112db85b65a4fe0f40f4d282f7
 
 COCOAPODS: 1.0.1

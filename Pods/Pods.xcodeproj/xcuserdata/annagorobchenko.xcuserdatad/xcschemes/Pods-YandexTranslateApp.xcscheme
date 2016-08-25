@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8C744FC8759BD5F2E20380ED3B6A3492"
+               BlueprintIdentifier = "1166E16F968C4D11A014AB0754822DDD"
                BuildableName = "Pods_YandexTranslateApp.framework"
                BlueprintName = "Pods-YandexTranslateApp"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8C744FC8759BD5F2E20380ED3B6A3492"
+            BlueprintIdentifier = "1166E16F968C4D11A014AB0754822DDD"
             BuildableName = "Pods_YandexTranslateApp.framework"
             BlueprintName = "Pods-YandexTranslateApp"
             ReferencedContainer = "container:Pods.xcodeproj">
