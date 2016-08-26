@@ -15,17 +15,20 @@ struct ViewModelTranslater {
     
     private var previous = ""    
     
-    func changedText(text : String) {
+    mutating func changedText(text : String) {
         
         self.yandexServiceApi.sendRequestToTranslate(text)
-            .subscribeNext { translatedText in
-                print(translatedText)
-            }
+            .subscribeNext { translatedTextYandex in
+                self.translatedText.value = translatedTextYandex!
+                print(self.translatedText.value)
+                
+            } 
         
         
         
         self.isAnimating.value =  true
         
+        /*
         self.yandexServiceApi.sendRequestText(text){
              data in
             
@@ -47,7 +50,7 @@ struct ViewModelTranslater {
             }
             
             
-            
+           */
             
             /*self!.textChangedObservable!
              
@@ -78,4 +81,4 @@ struct ViewModelTranslater {
             
         }
     }
-}
+
