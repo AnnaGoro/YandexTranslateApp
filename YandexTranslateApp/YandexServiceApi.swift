@@ -25,7 +25,7 @@ class YandexServiceApi {
         
         
         return Alamofire.request(.POST, self.url, parameters: parameters)
-            .rx_responseJSON()
+            .rx_responseJSON().shareReplayLatestWhileConnected().debug("http")
             .map { (res: NSHTTPURLResponse, json: AnyObject) -> String? in
                 
                 guard let def = json["def"] as? [[String: AnyObject]],
