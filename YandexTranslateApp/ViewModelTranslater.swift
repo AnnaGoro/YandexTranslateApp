@@ -22,16 +22,13 @@ struct ViewModelTranslater {
                 .throttle(0.4, scheduler: MainScheduler.instance)
                 .flatMap{ (text : String)-> Observable <String?> in
                     
-                    if  text.characters.count < 3 {
+                    guard text.characters.count > 3 else {
                         
-                        self.isAnimating.value = false
                         return Observable.just("")
                         
-                    } else {
-                        self.isAnimating.value =  true
-                        return self.yandexServiceApi.sendRequestToTranslate(text)
                     }
-                    
+                        self.isAnimating.value = true
+                        return self.yandexServiceApi.sendRequestToTranslate(text)
                 }
                 .subscribe(
                     onNext: { translatedTextYandex in
