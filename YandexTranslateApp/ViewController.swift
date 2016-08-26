@@ -34,7 +34,6 @@ class ViewController: UIViewController, UITextFieldDelegate  {
                     self!.actInd.startAnimating()
                     
                 } else {
-                    
                     self!.actInd.stopAnimating()
                 }
             }
