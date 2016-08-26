@@ -52,48 +52,4 @@ struct ViewModelTranslater {
         
     }
 }
-                    /*
                     
-                            .subscribe(
-                                onNext: { translatedTextYandex  in
-                                    
-                                    self.translatedText.value = translatedTextYandex!
-                                    self.isAnimating.value = false
-                                },
-                                onError: { translatedTextYandex in
-                                    
-                                    self.translatedText.value = "Error, check your network connection"
-                                    self.isAnimating.value = false
-                                }
-                            )
-                        
-                    }
-                    
-                }
-                .addDisposableTo(bag)
-        }
-    }
-    
-    
- 
- 
-    
-
-
-class Signals {
-
-  private let subj2 : Observable <String>? = ViewModelTranslater().observableViewModelTextField
-  private let subj1: Observable <String?> = YandexServiceApi().sendRequestToTranslate(ViewModelTranslater().translatedText.value)
-    
-    
-
-
-
-}
-
-
- */
-
-
-
-
