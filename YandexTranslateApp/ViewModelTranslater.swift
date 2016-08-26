@@ -24,15 +24,13 @@ struct ViewModelTranslater {
                     
                     self.translatedText.value = translatedTextYandex!
                     self.isAnimating.value = false
-                    print(self.translatedText.value)
-                    
+                                       
                 },
                 
                 onError: { translatedTextYandex in
                     
                     self.translatedText.value = "Error, check your network connection"
                     self.isAnimating.value = false
-                    print(self.translatedText.value)
                     
                 }
             )
