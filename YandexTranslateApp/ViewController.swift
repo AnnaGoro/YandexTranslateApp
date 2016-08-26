@@ -22,11 +22,7 @@ class ViewController: UIViewController, UITextFieldDelegate  {
         
         viewModelTranslater.observableViewModelTextField = inputTextToTranslate.rx_text.asObservable()
               
-        viewModelTranslater.translatedText.asObservable()
-            .subscribeNext {[weak self] (translatedText: String) -> Void in
-                self!.translatedText.text = translatedText
-            }
-            .addDisposableTo(bag)
+        viewModelTranslater.translatedText.asObservable().bindTo(translatedText.rx_text).addDisposableTo(bag)
         
         viewModelTranslater.isAnimating.asObservable()
             .subscribeNext { [weak self] (isAnimating: Bool) -> Void in
@@ -38,8 +34,6 @@ class ViewController: UIViewController, UITextFieldDelegate  {
                 }
             }
             .addDisposableTo(bag)
-        
-        
         
     }
 }
