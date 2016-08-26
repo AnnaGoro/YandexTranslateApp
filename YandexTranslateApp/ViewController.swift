@@ -23,19 +23,19 @@ class ViewController: UIViewController, UITextFieldDelegate  {
         viewModelTranslater.observableViewModelTextField = inputTextToTranslate.rx_text.asObservable()
               
         viewModelTranslater.translatedText.asObservable()
-            .subscribeNext { (translatedText: String) -> Void in
-                self.translatedText.text = translatedText
+            .subscribeNext {[weak self] (translatedText: String) -> Void in
+                self!.translatedText.text = translatedText
             }
             .addDisposableTo(bag)
         
         viewModelTranslater.isAnimating.asObservable()
-            .subscribeNext { (isAnimating: Bool) -> Void in
+            .subscribeNext { [weak self] (isAnimating: Bool) -> Void in
                 if isAnimating {
-                    self.actInd.startAnimating()
+                    self!.actInd.startAnimating()
                     
                 } else {
                     
-                    self.actInd.stopAnimating()
+                    self!.actInd.stopAnimating()
                 }
             }
             .addDisposableTo(bag)

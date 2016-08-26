@@ -15,9 +15,6 @@
 		C5ADA0F11D6AD92200AE2B42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5ADA0EF1D6AD92200AE2B42 /* LaunchScreen.storyboard */; };
 		C5ADA0F91D6ADAD100AE2B42 /* ViewModelTranslater.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5ADA0F81D6ADAD100AE2B42 /* ViewModelTranslater.swift */; };
 		C5ADA0FB1D6ADAF100AE2B42 /* YandexServiceApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5ADA0FA1D6ADAF100AE2B42 /* YandexServiceApi.swift */; };
-		C5ADA0FD1D6AE4C400AE2B42 /* TranlationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5ADA0FC1D6AE4C400AE2B42 /* TranlationModel.swift */; };
-		C5ADA0FF1D6AEC3B00AE2B42 /* TranslationResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5ADA0FE1D6AEC3B00AE2B42 /* TranslationResponseModel.swift */; };
-		C5ADA1011D6AEE1100AE2B42 /* TranslationListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5ADA1001D6AEE1100AE2B42 /* TranslationListModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,9 +30,6 @@
 		C5ADA0F21D6AD92200AE2B42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C5ADA0F81D6ADAD100AE2B42 /* ViewModelTranslater.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelTranslater.swift; sourceTree = "<group>"; };
 		C5ADA0FA1D6ADAF100AE2B42 /* YandexServiceApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YandexServiceApi.swift; sourceTree = "<group>"; };
-		C5ADA0FC1D6AE4C400AE2B42 /* TranlationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TranlationModel.swift; sourceTree = "<group>"; };
-		C5ADA0FE1D6AEC3B00AE2B42 /* TranslationResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TranslationResponseModel.swift; sourceTree = "<group>"; };
-		C5ADA1001D6AEE1100AE2B42 /* TranslationListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TranslationListModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,9 +90,6 @@
 				C5ADA0F21D6AD92200AE2B42 /* Info.plist */,
 				C5ADA0F81D6ADAD100AE2B42 /* ViewModelTranslater.swift */,
 				C5ADA0FA1D6ADAF100AE2B42 /* YandexServiceApi.swift */,
-				C5ADA0FC1D6AE4C400AE2B42 /* TranlationModel.swift */,
-				C5ADA0FE1D6AEC3B00AE2B42 /* TranslationResponseModel.swift */,
-				C5ADA1001D6AEE1100AE2B42 /* TranslationListModel.swift */,
 			);
 			path = YandexTranslateApp;
 			sourceTree = "<group>";
@@ -227,11 +218,8 @@
 			files = (
 				C5ADA0E91D6AD92200AE2B42 /* ViewController.swift in Sources */,
 				C5ADA0FB1D6ADAF100AE2B42 /* YandexServiceApi.swift in Sources */,
-				C5ADA1011D6AEE1100AE2B42 /* TranslationListModel.swift in Sources */,
 				C5ADA0E71D6AD92200AE2B42 /* AppDelegate.swift in Sources */,
 				C5ADA0F91D6ADAD100AE2B42 /* ViewModelTranslater.swift in Sources */,
-				C5ADA0FF1D6AEC3B00AE2B42 /* TranslationResponseModel.swift in Sources */,
-				C5ADA0FD1D6AE4C400AE2B42 /* TranlationModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
