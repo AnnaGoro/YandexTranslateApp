@@ -2,6 +2,7 @@
 import Foundation
 import UIKit
 import RxSwift
+import RxCocoa
 
 struct ViewModelTranslater {
     
@@ -19,17 +20,40 @@ struct ViewModelTranslater {
             
             observable
                 .throttle(0.4, scheduler: MainScheduler.instance)
-                .subscribeNext { (inputText: String) -> Void in
-                    if  inputText.characters.count < 3 {
+                .flatMap{ (text : String)-> Observable <String?> in
+                    
+                    if  text.characters.count < 3 {
                         
                         self.isAnimating.value = false
-                        self.translatedText.value  = ""
-                        return
+                        return Observable.just("")
                         
                     } else {
                         self.isAnimating.value =  true
+                        return self.yandexServiceApi.sendRequestToTranslate(text)
+                    }
+                    
+                }
+                .subscribe(
+                    onNext: {translatedTextYandex in
                         
-                        self.yandexServiceApi.sendRequestToTranslate(inputText)
+                  
+                        self.translatedText.value = translatedTextYandex!
+                        self.isAnimating.value = false
+                        
+                    },
+                    onError: { translatedTextYandex in
+                    
+                    self.translatedText.value = "Error, check your network connection"
+                    self.isAnimating.value = false
+                    }
+
+                    ).addDisposableTo(bag)
+        }
+        
+    }
+}
+                    /*
+                    
                             .subscribe(
                                 onNext: { translatedTextYandex  in
                                     
@@ -41,7 +65,7 @@ struct ViewModelTranslater {
                                     self.translatedText.value = "Error, check your network connection"
                                     self.isAnimating.value = false
                                 }
-                        )
+                            )
                         
                     }
                     
@@ -51,5 +75,25 @@ struct ViewModelTranslater {
     }
     
     
+ 
+ 
+    
+
+
+class Signals {
+
+  private let subj2 : Observable <String>? = ViewModelTranslater().observableViewModelTextField
+  private let subj1: Observable <String?> = YandexServiceApi().sendRequestToTranslate(ViewModelTranslater().translatedText.value)
+    
+    
+
+
+
 }
+
+
+ */
+
+
+
 
