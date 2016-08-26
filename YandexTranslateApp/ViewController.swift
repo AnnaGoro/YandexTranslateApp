@@ -24,7 +24,7 @@ class ViewController: UIViewController, UITextFieldDelegate  {
             
             .throttle(0.4, scheduler: MainScheduler.instance) // Wait 0.4 for changes.
             
-            .distinctUntilChanged() // If they didn't occur, check if the new value is the same as ald value
+            .distinctUntilChanged() // If they didn't occur, check if the new value is the same as old value
             
             .filter ({ (text : String?) -> Bool in
                 let checkCount = text!.characters.count == 0
