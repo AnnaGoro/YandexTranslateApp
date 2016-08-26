@@ -34,8 +34,7 @@ struct ViewModelTranslater {
                     
                 }
                 .subscribe(
-                    onNext: {translatedTextYandex in
-                        
+                    onNext: { translatedTextYandex in
                   
                         self.translatedText.value = translatedTextYandex!
                         self.isAnimating.value = false
