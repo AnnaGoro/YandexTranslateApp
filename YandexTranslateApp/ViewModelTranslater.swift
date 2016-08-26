@@ -19,7 +19,7 @@ struct ViewModelTranslater {
             
             observable
                 .throttle(0.4, scheduler: MainScheduler.instance)
-                .subscribeNext { (inputText: String) -> Void in                    
+                .subscribeNext { (inputText: String) -> Void in
                     if  inputText.characters.count < 3 {
                         
                         self.isAnimating.value = false
@@ -27,7 +27,22 @@ struct ViewModelTranslater {
                         return
                         
                     } else {
-                        self.changedText(inputText)
+                        self.isAnimating.value =  true
+                        
+                        self.yandexServiceApi.sendRequestToTranslate(inputText)
+                            .subscribe(
+                                onNext: { translatedTextYandex  in
+                                    
+                                    self.translatedText.value = translatedTextYandex!
+                                    self.isAnimating.value = false
+                                },
+                                onError: { translatedTextYandex in
+                                    
+                                    self.translatedText.value = "Error, check your network connection"
+                                    self.isAnimating.value = false
+                                }
+                        )
+                        
                     }
                     
                 }
@@ -35,25 +50,6 @@ struct ViewModelTranslater {
         }
     }
     
-    mutating func changedText(text : String) {
-        
-        self.isAnimating.value =  true
-        
-        self.yandexServiceApi.sendRequestToTranslate(text)
-            .subscribe(
-                onNext: { translatedTextYandex  in
-                    
-                    self.translatedText.value = translatedTextYandex!
-                    self.isAnimating.value = false
-                },
-                onError: { translatedTextYandex in
-                    
-                    self.translatedText.value = "Error, check your network connection"
-                    self.isAnimating.value = false
-                }
-            )
-            .addDisposableTo(bag)
-        
-    }
+    
 }
 
