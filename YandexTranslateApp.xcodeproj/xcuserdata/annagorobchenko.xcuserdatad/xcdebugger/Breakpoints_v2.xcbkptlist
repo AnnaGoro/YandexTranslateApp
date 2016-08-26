@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YandexTranslateApp/ViewModelTranslater.swift"
-            timestampString = "493824076.357768"
+            timestampString = "493903916.290794"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "4"
-            endingLineNumber = "4">
+            startingLineNumber = "3"
+            endingLineNumber = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
